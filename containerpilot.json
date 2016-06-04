@@ -1,0 +1,13 @@
+{
+    "consul": "consul:8500",
+    "services": [
+        {
+            "name": "redis",
+            "port": 6379,
+            "health": "redis-cli PING | grep PONG > /dev/null || (echo \"redis failed\"; exit 1)",
+            "poll": 3,
+            "ttl": 10
+        }
+    ]
+}
+
